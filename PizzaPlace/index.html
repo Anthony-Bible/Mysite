@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pizza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <img src="pizza_guy.png" alt="Pizza Logo"
+             style="width:40%; position: relative; left: 30%;">      
+        <form name="pizzaForm" onsubmit="alert('your order has been placed')" method="post" enctype="text/plain">
+            <div>
+                <h2>Personal Information:</h2>                
+                <table  style="float:left; width:50%;">
+                    <tbody>
+                        <tr>
+                            <td><label>First&nbspName: </label></td>
+                            <td><input name="First Name" placeholder="First Name" type="text" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Last&nbspName: </label></td>
+                            <td><input name="Last Name" placeholder="Last Name" type="text"required ></td>
+                        </tr>
+                        <tr>
+                            <td><label>Phone: </label></td>
+                            <td><input name="Phone" placeholder="(xxx) xxx-xxxx" type="tel" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email: </label></td>
+                            <td><input name="Email" placeholder="your_email@email.com" type="email" validate></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="float:right; width:50%;">
+                    <tbody>
+                        <tr>
+                            <td><label>Address:</label></td>
+                            <td><input name="Address" placeholder="Your Address" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label>City:</label></td>
+                            <td><input name="City" placeholder="City" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label>State:</label></td>
+                            <td><input name="State" placeholder="State" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label>ZIP:</label></td>
+                            <td><input name="ZIP" placeholder="xxxxx" type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <div style="float:left; width: 50%;">
+                    <div style="float:left; width: 50%;">
+                        <h2>Size:</h2>                
+                        <table>
+                            <tbody>
+                                <tr><td><input type="radio" name="Pizza Size" value="Small"></td>
+                                    <td><label>Small</label></td></tr>
+                                <tr><td><input type="radio" name="Pizza Size" value="Medium"></td>
+                                    <td><label>Medium</label></td></tr>
+                                <tr><td><input type="radio" name="Pizza Size" value="Large"></td>
+                                    <td><label>Large</label></td></tr>
+                                <tr><td><input type="radio" name="Pizza Size" value="Family Size"></td>
+                                    <td><label>Family Size</label></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="float:right; width: 50%">
+                        <h2>Crust:</h2>
+                        <select name="Crust" >
+                            <option value="Thin">Thin Crust</option>
+                            <option value="Regular">Regular Crust</option>
+                            <option value="Deep">Deep Dish</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div style="float: right; width: 50%">
+                <h2>Toppings:</h2>
+                <div style="float:left; width:50%;">
+                    <table>
+                        <tbody>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Pepperoni" checked></td>
+                                <td><label>Pepperoni</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Sausage" checked></td>
+                                <td><label>Sausage</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="CanadianBacon" checked></td>
+                                <td><label>Canadian&nbspBacon</label></td></tr>  
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Ham" checked></td>
+                                <td><label>Ham</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Pineapple" checked></td>
+                                <td><label>Pineapple</label></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="float:right; width:50%;">
+                    <table>
+                        <tbody>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="GreenPeppers" checked></td>
+                                <td><label>Green&nbspPeppers</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Onions" checked></td>
+                                <td><label>Onions</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Jalapenos" checked></td>
+                                <td><label>Jalapenos</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Olives" checked></td>
+                                <td><label>Olives</label></td></tr>
+                            <tr><td><input type="checkbox" name="pizzaToppings" value="Mushrooms" checked></td>
+                                <td><label>Mushrooms</label></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+         <div style="clear:both"></div>
+            <h2>Anything Else?</h2>
+
+            <label>Special Instructions:</label>
+            <textarea name="Comments" placeholder="Your Comments"
+                      style='width:100%; height:100px; box-sizing: border-box; margin-top: 10px; min-width: 100%; max-width: 100%;'></textarea>
+            
+            <div class="formButtons">               
+                <input type="reset" value="Reset">
+                <input type="submit" value="Send">
+            </div>
+
+    </form>
+</body>
+</html>

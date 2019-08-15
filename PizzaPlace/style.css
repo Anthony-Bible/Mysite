@@ -1,0 +1,37 @@
+* {
+                outline-color: white;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            body { 
+                text-align: left; 
+                color: black;
+                margin: auto;
+                padding-bottom: 50px;
+                background-image: url(http://papers.co/wallpaper/papers.co-vd13-space-white-simple-abstract-cimon-cpage-pattern-art-29-wallpaper.jpg);
+            }
+            form {
+                background-image: url(http://www.colorhexa.com/62819a.png);
+                font-family: monospace;
+                font-size: 20px;
+                max-width: 950px;
+                margin: auto;
+                padding: 20px 20px 20px 20px;
+                border-width: 7px;
+                background-color: white;
+            }
+            h2 {
+                text-shadow:2px 2px 4px #3D5C75;
+                color: white;
+                font-size: 25px;
+                font-family: monospace;
+            }
+            .formButtons * {
+                margin-top: 20px;
+                width: 100px;
+                text-align: center;
+            }
+            input[type=text], input[type=tel], input[type=email], select, textarea {
+                padding: 2px 5px;
+                border: 3px solid #284A66;
+            }
