@@ -1,3 +1,6 @@
 [submodule "registration"]
 	path = registration
 	url = https://bitbucket.anthonybible.com/scm/web/registration.git
+[submodule "sendgrid-php"]
+	path = sendgrid-php
+	url = https://bitbucket.anthonybible.com/scm/web/sendgrid-php.git
