@@ -20,9 +20,9 @@
 
 	
     <!-- Custom Fonts -->
-    <script async src="https://use.fontawesome.com/a8983b99ef.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script async rel='preconnect' src="https://use.fontawesome.com/a8983b99ef.js"></script>
+    <link rel='preconnect' href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel='preconnect' href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,29 +32,8 @@
     <![endif]-->
 <link rel="stylesheet" href="css/style.css">
 
-    <script  src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- <script src="js/contact_me.js"></script> -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-<script>
-
-(function(h,o,t,j,a,r){
-
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-
-    h._hjSettings={hjid:1012239,hjsv:6};
-
-    a=o.getElementsByTagName('head')[0];
-
-    r=o.createElement('script');r.async=1;
-
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-
-    a.appendChild(r);
-
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-
-</script>
+  <!-- <script src="js/contact_me.js"></script> -->
+  
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
@@ -99,11 +78,11 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/comingsoon/">Blog</a>
+                        <a href="https://blog.anthonybible.com">Blog</a>
                         
                     </li>
                     <li>
-                    <a href="http:/dashboard.anthonybible.com:3000/d/DgpLe8wmz/public-dashboard-2?refresh=10s&orgId=1">Homelab</a>
+                    <a href="/comingsoon/">Homelab</a>
                     </li>
                 </ul>
             </div>
@@ -171,7 +150,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/amh.png" class="img-responsive" alt="AMH FOUNDATION">
+                        <img src="img/portfolio/amh.jpg" class="img-responsive" alt="AMH FOUNDATION">
                     </a>
                     <hr>
                 </div>
@@ -588,28 +567,33 @@
     </div>
 	
    
+<!-- Jquery cdn -->
+<script rel='preconnect' src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script rel='preconnect' src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script   src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 
     <!-- Plugin JavaScript -->
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script   src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
     <script src="js/script.js"></script>
-
+  
 
     <!-- Theme JavaScript -->
-   
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script rel='preconnect' src='https://www.google.com/recaptcha/api.js'></script>
 
-  ga('create', 'UA-85617153-3', 'auto');
-  ga('send', 'pageview');
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async rel='preconnect' src="https://www.googletagmanager.com/gtag/js?id=UA-85617153-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-85617153-3');
 </script>
+
 
 </body>
 
