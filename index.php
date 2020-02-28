@@ -78,7 +78,7 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="https://blog.anthonybible.com">Blog</a>
+                        <a href="https://www.abible.dev">Blog</a>
                         
                     </li>
                     <li>
