@@ -1,3 +1,9 @@
+
+<?php
+header("Location: https://anthonybible.com/comingsoon");
+
+exit(); 
+?>
 <?php require('core/init.php'); ?>
 
 <?php
