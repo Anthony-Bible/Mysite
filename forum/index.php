@@ -1,12 +1,11 @@
 
-<?php
-header("Location: https://anthonybible.com/comingsoon");
+<?php 
 
-exit(); 
-?>
-<?php require('core/init.php'); ?>
 
-<?php
+
+require('core/init.php'); 
+
+
 //Create Topic Object
 $topic = new Topic;
 
