@@ -12,4 +12,4 @@ define("DB_NAME", getenv('FORUMDBNAME'));
 define("SITE_TITLE", "Welcome To TalkingSpace!");
 
 //Paths
-define ('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/portfolio/forum/');
+define ('BASE_URI', 'https://'.$_SERVER['SERVER_NAME'].'/portfolio/forum/');
