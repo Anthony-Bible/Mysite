@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome To TalkingSpace</title>
   <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- Custom styles for this template -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="<?php echo BASE_URI; ?>templates/css/custom.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="<?php echo BASE_URI; ?>templates/js/bootstrap.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
 	<script src="<?php echo BASE_URI; ?>templates/js/ckeditor/ckeditor.js"></script>
 	<?php
     //Check if title is set, if not assign it
@@ -23,29 +22,23 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="index.php">TalkingSpace</a>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.php">Home</a></li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav navbar-right">
+            <li class="nav-item active"><a  class="nav-link" href="index.php">Home</a></li>
 			<?php if(!isLoggedIn()) : ?>
-				<li><a href="register.php">Create An Account</a></li>
+				<li><a class="nav-link" href="register.php">Create An Account</a></li>
 			<?php else : ?>
-				<li><a href="create.php">Create Topic</a></li>
+				<li><a  class="nav-link" href="create.php">Create Topic</a></li>
 			<?php endif; ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>
 
     <div class="container">
 		<div class="row">
