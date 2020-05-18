@@ -366,21 +366,21 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <a href="registration/"><h2>Mini social Network</h2></a>
+                            <a href="//reg.anthony.bible"><h2>Mini social Network</h2></a>
                             <hr class="star-primary">
                             <img src="img/portfolio/register.png" class="img-responsive img-centered" alt="">
                             <p>This is a project I did to further hone my skills. I built this from the ground up only using bootstrap and jquery, using the industry best practices. I used the latest security techniques to store and retrieve user credentials. In this project I used PHP, Javascript, Jquery, AJAX, and Bootstrap.</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
-                                    <strong><a href="registration/">Personal Project</a>
+                                    <strong><a href="//reg.anthony.bible">Personal Project</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="registration/">April 2017</a>
+                                    <strong><a href="//reg.anthony.bible">April 2017</a>
                                     </strong>
                                 </li>
                                 <li>Service:
-                                    <strong><a href="registration/">Web Development</a>
+                                    <strong><a href="//reg.anthony.bible">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>

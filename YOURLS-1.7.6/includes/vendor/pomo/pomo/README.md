@@ -1,4 +1,4 @@
-﻿POMO
+POMO
 ====
 [![Latest Release](https://img.shields.io/packagist/v/pomo/pomo.svg)](https://packagist.org/packages/pomo/pomo)
 [![Build Status](https://travis-ci.org/LeoColomb/pomo.svg?branch=master)](https://travis-ci.org/LeoColomb/pomo)
