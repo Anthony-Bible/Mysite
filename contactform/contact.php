@@ -121,7 +121,7 @@ function sendEmail(){
 			/* We've set all the parameters, it's now time to send it. To do this we just check the captcha response. If they failed we won't send the mail. This has dramatically reduced the spam to almost zero */
 			
 			$secret= getenv('GOOGLECAPTCHASECRET');
-			$captchaResponse=$_POST["captcha"];
+			$captchaResponse=$_POST["g-recaptcha-response"];
 			echo "<response>";
 			echo "<message>";
 
