@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
-print_r($_POST);
+#print_r($_POST);
 ?>
 <?php 
 echo '<?xml version="1.0" encoding="UTF-8" ?>'; 
