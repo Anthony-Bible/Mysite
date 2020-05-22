@@ -1,5 +1,7 @@
+console.log("pre-submit");
 $("#contactForm").submit(function(event){ 
     //Prevent the default action from happening
+    console.log("submitted");
     event.preventDefault();
     // grecaptcha.ready(function() {
     //     grecaptcha.execute('6LeFdokUAAAAAHjyx-b7eiMeBrZs4FGgZlyurW9V', {action: ''});
@@ -37,8 +39,8 @@ $("#contactForm").submit(function(event){
             var $actualResponse = $(this).find('message').text();
             console.log("This is the response:");
             console.log($actualResponse);
-            // console.log($checkedResponse)
-            // console.log($response)
+             console.log($checkedResponse)
+             console.log($response)
             $messageDiv.html($actualResponse);      
             if($actualResponse==$checkedResponse)
             {
