@@ -1,4 +1,5 @@
 console.log("pre-submit");
+$(document).ready(function(){
 $("contactForm").submit(function(event){ 
     //Prevent the default action from happening
     console.log("submitted");
@@ -60,4 +61,4 @@ $("contactForm").submit(function(event){
      { 
      $("#contactForm").html(e); 
      }
-});
+});});
