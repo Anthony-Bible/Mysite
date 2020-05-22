@@ -1,5 +1,5 @@
 console.log("pre-submit");
-$("#contactForm").submit(function(event){ 
+$("contactForm").submit(function(event){ 
     //Prevent the default action from happening
     console.log("submitted");
     event.preventDefault();
