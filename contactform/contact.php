@@ -67,7 +67,7 @@ $sender_email = 'anthony@anthony.bible';
 		
 		</head>
 		
-		<body style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; background-color: #fff; box-sizing: border-box; color: #333; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 14px; line-height: 1.42857143; margin: 0;">
+		<body style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; background-color: #fff; box-sizing: border-box; color: #333; font-family: \'Helvetica Neue\',Helvetica,Arial,sans-serif; font-size: 14px; line-height: 1.42857143; margin: 0;">
 		  <style type="text/css" style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">
 			@media screen and (max-width:480px) {
 			  .preheader .rightColumnContent,
