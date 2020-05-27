@@ -12,12 +12,12 @@ use \Aws\Exception\AwsException;
 function sendEmail(){
 	### TODO ### 
     # Create function with all variables in an array #
-
+	$provider = CredentialProvider::env();
 echo '<?xml version="1.0" encoding="UTF-8" ?>'; 
 $SesClient = new SesClient([
-    'profile' => 'default',
-    'version' => '2010-12-01',
-    'region'  => 'us-west-2'
+    'version' => 'latest',
+	'region'  => 'us-west-2',
+	'credentials' => $provider
 ]);
 $sender_email = 'anthony@anthony.bible';
 
