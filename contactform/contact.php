@@ -97,7 +97,6 @@ $sender_email = 'anthony@anthony.bible';
 			echo "<message>";
 			// output error message if fails
 			echo $e->getMessage();
-			echo("The email was not sent. Error message: ".$e->getAwsErrorMessage()."\n");
 			echo "\n";
 			echo "</message>";
 			echo "</response>";
