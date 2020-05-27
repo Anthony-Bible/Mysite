@@ -22,8 +22,8 @@ $SesClient = new SesClient([
 $sender_email = 'anthony@anthony.bible';
 
 	
-		$recieverEmail=$_POST["email"];
-		$receiverid =$_POST["name"];
+		$recieverEmail=[$_POST["email"]];
+		$receiverid = $_POST["name"];
 		$phone=$_POST["phone"];
 		$message = $_POST["message"];
 		$subject = "Thanks for contacting me";
@@ -55,7 +55,7 @@ $sender_email = 'anthony@anthony.bible';
 				//This user is verified by recaptcha
 				$result = $SesClient->sendEmail([
 					'Destination' => [
-						'ToAddresses' => $receiverid,
+						'ToAddresses' => $recieverEmail,
 					],
 					'ReplyToAddresses' => [$sender_email],
 					'Source' => $sender_email,
