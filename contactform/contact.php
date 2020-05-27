@@ -53,7 +53,7 @@ $sender_email = 'anthony@anthony.bible';
 				
 				if ($captcha_success->success==true) {
 				//This user is verified by recaptcha
-				$result = $SesClicent->sendEmail([
+				$result = $SesClient->sendEmail([
 					'Destination' => [
 						'ToAddresses' => $receiverid,
 					],
@@ -79,7 +79,7 @@ $sender_email = 'anthony@anthony.bible';
 				]);
 				$messageId = $result['MessageId'];
 				echo("Email sent! Message ID: $messageId"."\n");
-				#echo "<h3>You Successfully sent the Email if you don't recieve an email please check your spam folder</h3>";
+				# echo "<h3>You Successfully sent the Email if you don't recieve an email please check your spam folder</h3>";
 
 
 
