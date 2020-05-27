@@ -9,6 +9,10 @@ use \Aws\Ses\SesClient;
 use \Aws\Exception\AwsException;
 
 
+function sendEmail(){
+	### TODO ### 
+    # Create function with all variables in an array #
+
 echo '<?xml version="1.0" encoding="UTF-8" ?>'; 
 $SesClient = new SesClient([
     'profile' => 'default',
@@ -31,9 +35,6 @@ $sender_email = 'anthony@anthony.bible';
 		$char_set = 'UTF-8';
 	
 
-
-function sendEmail(){
-	
 	try 
 		{
 			/* We've set all the parameters, it's now time to send it. To do this we just check the captcha response. If they failed we won't send the mail. This has dramatically reduced the spam to almost zero */
@@ -52,7 +53,7 @@ function sendEmail(){
 				
 				if ($captcha_success->success==true) {
 				//This user is verified by recaptcha
-				$result = $SesClient->sendEmail([
+				$result = $SesClicent->sendEmail([
 					'Destination' => [
 						'ToAddresses' => $receiverid,
 					],
