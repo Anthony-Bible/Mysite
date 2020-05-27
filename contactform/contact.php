@@ -23,7 +23,6 @@ $sender_email = 'anthony@anthony.bible';
 		$phone=$_POST["phone"];
 		$message = $_POST["message"];
 		$subject = "Thanks for contacting me";
-		$from = new From($senderEmail, $senderName);
 		$plaintext_body = 'This email was sent with Amazon SES using the AWS SDK for PHP.' ;
 		$html_body =  '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
 					  '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
