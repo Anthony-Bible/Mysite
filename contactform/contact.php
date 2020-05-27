@@ -6,6 +6,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 use \Aws\Ses\SesClient;
+use \Aws\Credentials\CredentialProvider;
 use \Aws\Exception\AwsException;
 
 
