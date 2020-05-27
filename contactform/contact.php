@@ -5,8 +5,8 @@ require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-use Aws\Ses\SesClient;
-use Aws\Exception\AwsException;
+use \Aws\Ses\SesClient;
+use \Aws\Exception\AwsException;
 
 
 echo '<?xml version="1.0" encoding="UTF-8" ?>'; 
