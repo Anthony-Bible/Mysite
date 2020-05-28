@@ -1559,7 +1559,7 @@ $sender_email = 'anthony@anthony.bible';
 												<tbody>
 												  <tr style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">
 													<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; line-height: 22px; padding: 45px 45px 45px 45px; text-align: inherit;" height="100%" valign="top" bgcolor="">
-													  <div style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: arial; font-size: 14px;"><strong style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: 700;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #3E3E3E;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 20px;">Hello $receiverid, <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">Thank you for contacting me, please allow me some time to look over your email.I understand you are want a quick response so I will make it a top priorty to respond to you. For reference here is a copy of your message. <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"><br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Thank you, <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Anthony Bible <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"></span></span></strong></div>
+													  <div style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: arial; font-size: 14px;"><strong style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: 700;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #3E3E3E;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 20px;">Hello'. $receiverid.', <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">Thank you for contacting me, please allow me some time to look over your email.I understand you are want a quick response so I will make it a top priorty to respond to you. For reference here is a copy of your message. <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"><br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Thank you, <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Anthony Bible <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"></span></span></strong></div>
 													</td>
 												  </tr>
 												</tbody>
@@ -1583,16 +1583,16 @@ $sender_email = 'anthony@anthony.bible';
 			  </tr>
 			  <tr style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">
 				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; text-align: left; vertical-align: top;">Email</td>
-				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; vertical-align: top;">$recieverEmail</td>
+				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; vertical-align: top;">'.$recieverEmail.'</td>
 			  </tr>
 			  <tr style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; background-color: #f9f9f9; box-sizing: border-box;">
 				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; text-align: left; vertical-align: top;">Phone</td>
-				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; vertical-align: top;">$phone</td>
+				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; vertical-align: top;">'.$phone.'</td>
 			  </tr>
 			  <tr style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">
 				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; text-align: left; vertical-align: top;">Message</td>
 				<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-top: 1px solid #ddd; box-sizing: border-box; line-height: 1.42857143; padding: 8px; vertical-align: top;">
-					$message
+					'.$message .'
 				</td>
 			  </tr>
 			</tbody>
