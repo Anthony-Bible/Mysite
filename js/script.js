@@ -35,13 +35,8 @@ $("#contactForm").submit(function( event ){
             console.log("This is the checked");
             
             $checkedResponse="You Successfully sent the Email if you don't recieve an email please check your spam folder";
-            // alert(id);
             console.log($checkedResponse);
             var $actualResponse = $(this).find('message').text();
-            console.log("This is the response:");
-            console.log($actualResponse);
-             console.log($checkedResponse)
-             console.log($response)
             $messageDiv.html($actualResponse);      
             if($actualResponse==$checkedResponse)
             {
