@@ -23,7 +23,7 @@ $SesClient = new SesClient([
 $sender_email = 'anthony@anthony.bible';
 
 	
-		$recieverEmail=[$_POST["email"]];
+		$recieverEmail=[$_POST["email"], "anthony@anthonybible.com"];
 		$receiverid = $_POST["name"];
 		$phone=$_POST["phone"];
 		$message = $_POST["message"];
@@ -1559,7 +1559,7 @@ $sender_email = 'anthony@anthony.bible';
 												<tbody>
 												  <tr style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">
 													<td style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; line-height: 22px; padding: 45px 45px 45px 45px; text-align: inherit;" height="100%" valign="top" bgcolor="">
-													  <div style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: arial; font-size: 14px;"><strong style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: 700;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #3E3E3E;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 20px;">Hello '. $receiverid.', <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">Thank you for contacting me, please allow me some time to look over your email. I understand you want a quick response so I will make it a top priorty to respond to you. For reference here is a copy of your message. <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"><br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Thank you, <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Anthony Bible <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"></span></span></strong></div>
+													  <div style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: arial; font-size: 14px;"><strong style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: 700;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #3E3E3E;"><span style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 20px;">Hello '. $receiverid.', <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;">Thank you for contacting me, please allow me some time to look over your email. I understand you want a quick response so I will make it a top priorty to respond to you but while you\'re waiting check out my github and blog. Links are at the bottom of this email.  For reference here is a copy of your message. <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"><br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Thank you, <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"> Anthony Bible <br style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;"></span></span></strong></div>
 													</td>
 												  </tr>
 												</tbody>
