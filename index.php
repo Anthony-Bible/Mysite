@@ -63,16 +63,16 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
  <!-- jQuery -->
-
-
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+ <div class="alert alert-warning alert-dismissible alert-checkout show" role="alert">
    You should check my <a href="https://github.com/anthony-bible" class="alert-link">github </a> to see some of the latest projects I'm working on. Or check out my <a href="www.abible.dev" class="alert-link"> blog </a> for a more detailed look into what I do. 
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default  navbar-custom">
+ 
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">

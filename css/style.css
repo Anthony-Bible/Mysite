@@ -22,7 +22,9 @@ header
 {
 	background: url("../img/caribbean.jpg") no-repeat ;
 }
-
+.navbar-custom{
+	margin-bottom: 0;
+}
 /*
 * Custom CSS
 *
@@ -64,4 +66,8 @@ i:first-child
     right: 20px;
     background-color: grey;
     /*display:none;*/
+}
+.alert-checkout {
+	margin-bottom: 0;
+	border-radius: 0;
 }
