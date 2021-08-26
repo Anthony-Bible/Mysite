@@ -21,6 +21,7 @@ and open the template in the editor.
 header
 {
 	background: url("../img/caribbean.jpg") no-repeat ;
+	background-position: center;
 }
 .navbar-custom{
 	margin-bottom: 0;
