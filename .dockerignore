@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.gitmodules
+.env
+.env-sample
+Jenkinsfile
+README*
+*.md
+vendor/
+node_modules/
+homelab.php.orig
