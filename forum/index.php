@@ -2,21 +2,21 @@
 
 require('core/init.php');
 
+try {
+	$topic = new Topic;
+	$user  = new User;
 
-//Create Topic Object
-$topic = new Topic;
-
-//Create User Object
-$user = new User;
-
-
-//Get Template & Assign Vars
-$template = new Template('templates/frontpage.php');
-
-//Assign Vars
-$template->topics = $topic->getAllTopics();
-$template->totalTopics = $topic->getTotalTopics();
-$template->totalCategories = $topic->getTotalCategories();
-$template->totalUsers = $user->getTotalUsers();
-//Display template
-echo $template;
+	$template = new Template('templates/frontpage.php');
+	$template->topics          = $topic->getAllTopics();
+	$template->totalTopics     = $topic->getTotalTopics();
+	$template->totalCategories = $topic->getTotalCategories();
+	$template->totalUsers      = $user->getTotalUsers();
+	echo $template;
+} catch (Throwable $e) {
+	error_log('[forum] frontpage failed: ' . $e->getMessage());
+	http_response_code(503);
+	echo '<!doctype html><meta charset="utf-8"><title>Forum unavailable</title>'
+		. '<style>body{font-family:system-ui;margin:4rem auto;max-width:40rem;padding:0 1rem}</style>'
+		. '<h1>Forum is temporarily unavailable</h1>'
+		. '<p>The database is unreachable right now. Try again later.</p>';
+}

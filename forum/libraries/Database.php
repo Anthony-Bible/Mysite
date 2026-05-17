@@ -17,12 +17,15 @@ class Database {
 				PDO::ATTR_PERSISTENT => true,
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION 
 		);
-		// Create a new PDO instanace
+		// Create a new PDO instanace. Let the exception propagate so callers
+		// (and Apache's error log) get a real cause instead of a downstream
+		// "prepare() on null" fatal. Log creds-free context first.
 		try {
 			$this->dbh = new PDO ($dsn, $this->user, $this->pass, $options);
-		}		// Catch any errors
-		catch ( PDOException $e ) {
+		} catch ( PDOException $e ) {
 			$this->error = $e->getMessage();
+			error_log('[forum] DB connect failed dsn=' . $dsn . ' user=' . $this->user . ' err=' . $e->getMessage());
+			throw $e;
 		}
 	}
 	
