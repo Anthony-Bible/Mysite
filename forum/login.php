@@ -1,6 +1,6 @@
-<?php include('core/init.php'); ?>
-
 <?php
+include('core/init.php');
+
 	if(isset($_POST['do_login'])){
 		//Get Vars
 		$username = $_POST['username'];

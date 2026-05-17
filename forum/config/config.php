@@ -2,8 +2,8 @@
 //DB Params
 require '../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->load();
+// createUnsafeImmutable keeps getenv() working; safeLoad tolerates a missing .env
+Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../../')->safeLoad();
 
 define("DB_HOST", getenv('FORUMDBHOST'));
 define("DB_USER", getenv('FORUMDBUSER')); 

@@ -1,9 +1,6 @@
+<?php
 
-<?php 
-
-
-
-require('core/init.php'); 
+require('core/init.php');
 
 
 //Create Topic Object
