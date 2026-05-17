@@ -368,7 +368,6 @@
                         <div class="modal-body">
                             <h2>Security & Compliance</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/amh.jpg" class="img-fluid img-centered" alt="">
                             <p>I hold PCI-DSS, HIPAA, and SOC 2 controls across the TCN platform. The work covers Kubernetes RBAC, secrets rotation, supply-chain and container scanning in CI, and audit logging across 300+ services. The JIT production-access system I built replaced standing prod privileges and gives the org an auditable trail for SOC 2 review.</p>
                             <ul class="list-inline item-details">
                                 <li class="list-inline-item">Focus:
