@@ -97,7 +97,7 @@
                 <div class="col-lg-12 text-center">
                     <h2>What Actually Runs This Site</h2>
                     <hr class="star-primary">
-                    <p>The page you're reading is served from a production GKE cluster in <code>us-central1-f</code>. Below is the real layout &mdash; ingress, mesh, GitOps, workloads, and data &mdash; not a stock diagram.</p>
+                    <p>This page is served from a production GKE cluster in <code>us-central1-f</code>. The layout below is the real one: ingress, mesh, GitOps, workloads, data.</p>
                     <div class="stat-row">
                         <span class="stat-pill">3 &times; t2d-standard-2 nodes</span>
                         <span class="stat-pill">GKE v1.35</span>
@@ -111,8 +111,8 @@
             <!-- Layer 1: Topology -->
             <div class="row layer-section">
                 <div class="col-lg-12">
-                    <h3>1. Topology &mdash; GKE on GCP</h3>
-                    <p class="lede">A single regional node pool in <code>us-central1-f</code>. Compute is intentionally modest; the interesting part is what's layered on top.</p>
+                    <h3>1. Topology: GKE on GCP</h3>
+                    <p class="lede">One regional node pool in <code>us-central1-f</code>. The nodes are small. The layers on top do the work.</p>
                     <div class="mermaid">
 graph LR
     User((Internet)) --> GCLB[Google Cloud<br/>Network LB]
@@ -131,8 +131,8 @@ graph LR
             <!-- Layer 2: Edge -->
             <div class="row layer-section">
                 <div class="col-lg-12">
-                    <h3>2. Edge &mdash; Ingress, DNS, TLS</h3>
-                    <p class="lede">One LoadBalancer (<code>34.61.118.235</code>) fronts every public hostname. <code>external-dns</code> writes records automatically; <code>cert-manager</code> renews Let's Encrypt certs without intervention.</p>
+                    <h3>2. Edge: Ingress, DNS, TLS</h3>
+                    <p class="lede">One LoadBalancer (<code>34.61.118.235</code>) fronts every public hostname. <code>external-dns</code> writes the DNS records. <code>cert-manager</code> renews the Let's Encrypt certs.</p>
                     <div class="mermaid">
 graph TD
     Client((HTTPS Client)) --> LB[Cloud LB<br/>34.61.118.235]
@@ -152,8 +152,8 @@ graph TD
             <!-- Layer 3: GitOps & Mesh -->
             <div class="row layer-section">
                 <div class="col-lg-12">
-                    <h3>3. Control Plane &mdash; GitOps + Service Mesh</h3>
-                    <p class="lede">ArgoCD reconciles cluster state from Git. Linkerd injects sidecars for mTLS and golden-signal telemetry between pods.</p>
+                    <h3>3. Control Plane: GitOps + Service Mesh</h3>
+                    <p class="lede">ArgoCD reconciles cluster state from Git. Linkerd injects sidecars that handle mTLS and emit golden-signal metrics between pods.</p>
                     <div class="mermaid">
 graph LR
     Git[(GitHub<br/>manifests)] --> ArgoRepo[argocd-repo-server]
@@ -170,8 +170,8 @@ graph LR
             <!-- Layer 3.5: Real Traffic (Linkerd) -->
             <div class="row layer-section">
                 <div class="col-lg-12">
-                    <h3>3.5 Real Traffic Flow &mdash; Observed by Linkerd</h3>
-                    <p class="lede">Not a wishlist diagram. The edges below are pulled from Linkerd's Prometheus (6-hour window) &mdash; only flows the mesh actually saw.</p>
+                    <h3>3.5 Real Traffic Flow: Observed by Linkerd</h3>
+                    <p class="lede">The edges below come from Linkerd's Prometheus over a 6-hour window. Every line is a flow the mesh saw.</p>
                     <div class="mermaid">
 graph LR
     Ingress[ingress-nginx]
@@ -191,7 +191,7 @@ graph LR
     DbDev -.->|via cloudsql-proxy| CSQL
                     </div>
                     <p class="lede" style="margin-top:20px;">
-                        <strong>What the numbers say:</strong> the static marketing site (this one) takes the most ingress hits; <code>passwordexchange</code> is the active app, fanning out to its <code>database</code> / <code>encryption</code> / <code>email</code> microservices over mTLS. The dev variant is currently being intercepted by Telepresence (<code>traffic-manager</code>) &mdash; that's a live local-dev session showing up in the mesh.
+                        <strong>What the numbers say:</strong> the static marketing site (this one) takes the most ingress hits. <code>passwordexchange</code> is the active app and fans out to its <code>database</code>, <code>encryption</code>, and <code>email</code> microservices over mTLS. Telepresence intercepts the dev variant through <code>traffic-manager</code>, so a local dev session appears in the mesh.
                     </p>
                 </div>
             </div>
@@ -200,7 +200,7 @@ graph LR
             <div class="row layer-section">
                 <div class="col-lg-12">
                     <h3>4. Workloads</h3>
-                    <p class="lede">Most apps run as 2-replica Deployments split into <code>dev</code> and <code>prod</code> variants. Two products live in their own namespaces; everything else shares <code>default</code>.</p>
+                    <p class="lede">Most apps run as 2-replica Deployments with <code>dev</code> and <code>prod</code> variants. Two products live in their own namespaces. The rest share <code>default</code>.</p>
                     <div class="ns-grid">
                         <div class="ns-card">
                             <h5>mysite / mystaticsite</h5>
@@ -208,7 +208,7 @@ graph LR
                         </div>
                         <div class="ns-card">
                             <h5>passwordexchange</h5>
-                            <div class="muted">dev + prod &mdash; password.exchange &amp; aliases.</div>
+                            <div class="muted">dev + prod. password.exchange and aliases.</div>
                         </div>
                         <div class="ns-card">
                             <h5>endixium</h5>
@@ -216,7 +216,7 @@ graph LR
                         </div>
                         <div class="ns-card">
                             <h5>encryption / email / database</h5>
-                            <div class="muted">Internal microservices, dev + prod.</div>
+                            <div class="muted">Internal microservices. dev + prod.</div>
                         </div>
                         <div class="ns-card">
                             <h5>runthis-server</h5>
@@ -224,7 +224,7 @@ graph LR
                         </div>
                         <div class="ns-card">
                             <h5>code-agent</h5>
-                            <div class="muted">code-agent.anthony.bible &mdash; scaled to zero by default.</div>
+                            <div class="muted">code-agent.anthony.bible. Scales to zero by default.</div>
                         </div>
                         <div class="ns-card">
                             <h5>omni-tools / rand-images</h5>
@@ -241,8 +241,8 @@ graph LR
             <!-- Layer 5: Data -->
             <div class="row layer-section">
                 <div class="col-lg-12">
-                    <h3>5. Data &amp; Messaging</h3>
-                    <p class="lede">Stateful services are kept narrow on purpose: a managed Cloud SQL instance reached via the official proxy, and a 3-node RabbitMQ cluster backed by GCE persistent disks.</p>
+                    <h3>5. Data and Messaging</h3>
+                    <p class="lede">Two stateful services: a managed Cloud SQL instance reached through the official proxy, and a 3-node RabbitMQ cluster on GCE persistent disks.</p>
                     <div class="mermaid">
 graph LR
     App[Application Pods]
@@ -264,7 +264,7 @@ graph LR
 
             <div class="row" style="margin-top: 50px;">
                 <div class="col-lg-12 text-center">
-                    <p><em>Everything above is declared in Git and reconciled by ArgoCD. The diagram changes when the manifests change &mdash; not the other way around.</em></p>
+                    <p><em>Everything above lives in Git. ArgoCD reconciles it. When the manifests change, the diagram changes.</em></p>
                 </div>
             </div>
         </div>
