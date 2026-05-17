@@ -5,6 +5,7 @@ use Aws\AbstractConfigurationProvider;
 use Aws\CacheInterface;
 use Aws\ConfigurationProviderInterface;
 use Aws\Retry\Exception\ConfigurationException;
+use Aws\Retry\V3\OptIn;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 
@@ -75,14 +76,17 @@ class ConfigurationProvider extends AbstractConfigurationProvider
      */
     public static function defaultProvider(array $config = [])
     {
-        $configProviders = [
-            self::env(),
-            self::ini(),
-            self::fallback()
-        ];
+        $configProviders = [self::env()];
+        if (
+            !isset($config['use_aws_shared_config_files'])
+            || $config['use_aws_shared_config_files'] != false
+        ) {
+            $configProviders[] = self::ini();
+        }
+        $configProviders[] = self::fallback();
 
         $memo = self::memoize(
-            call_user_func_array('self::chain', $configProviders)
+            call_user_func_array([ConfigurationProvider::class, 'chain'], $configProviders)
         );
 
         if (isset($config['retries'])
@@ -108,7 +112,7 @@ class ConfigurationProvider extends AbstractConfigurationProvider
                 ? getenv(self::ENV_MAX_ATTEMPTS)
                 : self::DEFAULT_MAX_ATTEMPTS;
             if (!empty($mode)) {
-                return Promise\promise_for(
+                return Promise\Create::promiseFor(
                     new Configuration($mode, $maxAttempts)
                 );
             }
@@ -126,10 +130,19 @@ class ConfigurationProvider extends AbstractConfigurationProvider
     public static function fallback()
     {
         return function () {
-            return Promise\promise_for(
-                new Configuration(self::DEFAULT_MODE, self::DEFAULT_MAX_ATTEMPTS)
+            return Promise\Create::promiseFor(
+                new Configuration(self::getDefaultMode(), self::DEFAULT_MAX_ATTEMPTS)
             );
         };
+    }
+
+    /**
+     * Returns the default retry mode. Reflects the AWS_NEW_RETRIES_2026
+     * opt-in: 'standard' when the env flag is set, 'legacy' otherwise.
+     */
+    public static function getDefaultMode(): string
+    {
+        return OptIn::isEnabled() ? 'standard' : self::DEFAULT_MODE;
     }
 
     /**
@@ -152,7 +165,7 @@ class ConfigurationProvider extends AbstractConfigurationProvider
         $profile = $profile ?: (getenv(self::ENV_PROFILE) ?: 'default');
 
         return function () use ($profile, $filename) {
-            if (!is_readable($filename)) {
+            if (!@is_readable($filename)) {
                 return self::reject("Cannot read configuration from $filename");
             }
             $data = \Aws\parse_ini_file($filename, true);
@@ -171,7 +184,7 @@ class ConfigurationProvider extends AbstractConfigurationProvider
                 ? $data[$profile][self::INI_MAX_ATTEMPTS]
                 : self::DEFAULT_MAX_ATTEMPTS;
 
-            return Promise\promise_for(
+            return Promise\Create::promiseFor(
                 new Configuration(
                     $data[$profile][self::INI_MODE],
                     $maxAttempts
