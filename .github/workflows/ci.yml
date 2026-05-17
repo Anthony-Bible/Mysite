@@ -16,7 +16,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           coverage: none
       - name: Lint changed PHP files
         run: |
@@ -40,23 +40,19 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       version: ${{ steps.vars.outputs.VERSION }}
-      phase: ${{ steps.vars.outputs.PHASE }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set version and phase
+      - name: Set version
         id: vars
         run: |
           if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
-            PHASE_VAL="prod"
             VERSION_VAL="${GITHUB_REF#refs/tags/}"
           else
-            PHASE_VAL="dev"
             VERSION_VAL="$(git rev-parse --short HEAD)"
           fi
           echo "VERSION=${VERSION_VAL}" >> $GITHUB_OUTPUT
-          echo "PHASE=${PHASE_VAL}" >> $GITHUB_OUTPUT
 
   build_image:
     if: github.event_name == 'push'
@@ -66,7 +62,6 @@ jobs:
       image_digest: ${{ steps.build-and-push.outputs.digest }}
     env:
       VERSION: ${{ needs.determine_version.outputs.version }}
-      PHASE: ${{ needs.determine_version.outputs.phase }}
     steps:
       - uses: actions/checkout@v4
       - name: Login to GitHub Container Registry
@@ -85,7 +80,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/anthony-bible/mysite-${{ env.PHASE }}:${{ env.VERSION }}
+          tags: ghcr.io/anthony-bible/mysite:${{ env.VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -95,7 +90,6 @@ jobs:
     needs: [determine_version, build_image]
     env:
       VERSION: ${{ needs.determine_version.outputs.version }}
-      PHASE: ${{ needs.determine_version.outputs.phase }}
       MAIN_IMAGE_DIGEST: ${{ needs.build_image.outputs.image_digest }}
     steps:
       - uses: actions/checkout@v4
@@ -122,33 +116,24 @@ jobs:
             exit 1
           fi
 
-          # MAIN_IMAGE_DIGEST is in form sha256:abc... — strip the prefix for the placeholder
           MAIN_IMAGE_SHA="${MAIN_IMAGE_DIGEST#sha256:}"
 
           sed -i \
             -e "s/%{VERSION}/${VERSION}/g" \
-            -e "s/%{PHASE}/${PHASE}/g" \
             -e "s/%{MAIN_IMAGE_SHA}/${MAIN_IMAGE_SHA}/g" \
             combined.yaml
 
-          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
-            mkdir -p ./build/prod
-            cp combined.yaml ./build/prod/mysite.yaml
-          else
-            mkdir -p ./build/dev
-            cp combined.yaml ./build/dev/mysite.yaml
-          fi
+          cp combined.yaml ./build/mysite.yaml
 
           cd ./build
           git config --local user.email "cd@mysite"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Update manifests for ${PHASE} ${VERSION}" -a || echo "No changes to commit in deployment repo."
+          git commit -m "Update manifest to ${VERSION}" -a || echo "No changes to commit in deployment repo."
 
       - name: Push changes to deploy repo
         uses: ad-m/github-push-action@master
-        if: |
-          (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')) && needs.determine_version.outputs.phase != ''
+        if: github.event_name == 'push'
         with:
           github_token: ${{ secrets.PUSH_SECRET }}
           repository: "Anthony-Bible/Mysite-deploy"

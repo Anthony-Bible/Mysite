@@ -1,25 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysite-%{PHASE}-deployment
+  name: mysite-deployment
   namespace: default
   labels:
-    app: mysite
+    app: mainsite
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mysite
-      phase: "%{PHASE}"
+      app: mainsite
   template:
     metadata:
       annotations:
         iam.amazonaws.com/role: arn:aws:iam::842805395457:role/Test_ec2ForSDK
         linkerd.io/inject: enabled
       labels:
-        app: mysite
+        app: mainsite
         name: mysite
-        phase: "%{PHASE}"
         version: "%{VERSION}"
     spec:
       affinity:
@@ -31,13 +29,12 @@ spec:
                 matchExpressions:
                 - key: app
                   operator: In
-                  values: ["mysite"]
+                  values: ["mainsite"]
               topologyKey: kubernetes.io/hostname
       initContainers:
-      # Pull /mysite/%{PHASE}/* parameters from AWS SSM into /var/www/html/.env
-      # (mirrors the legacy ~/Cluster/mysite-dev.yml initContainer wiring)
+      # Pull /mysite/* parameters from AWS SSM into /shared/.env
       - name: setup
-        image: ghcr.io/anthony-bible/mysite-%{PHASE}@sha256:%{MAIN_IMAGE_SHA}
+        image: ghcr.io/anthony-bible/mysite@sha256:%{MAIN_IMAGE_SHA}
         command:
           - sh
           - -c
@@ -47,18 +44,17 @@ spec:
               (apk add --no-cache aws-cli rsync 2>/dev/null || true)
             aws configure set default.region us-west-2
             aws ssm get-parameters-by-path \
-              --path /mysite/%{PHASE}/ --recursive --with-decryption \
+              --path /mysite/ --recursive --with-decryption \
               --output text \
               --query "Parameters[].[Name,Value]" \
-              | sed -E 's#/mysite/%{PHASE}/([^[:space:]]*)[[:space:]](.*)#export \1="\2"#' \
+              | sed -E 's#/mysite/([^[:space:]]*)[[:space:]](.*)#export \1="\2"#' \
               | sed -E 's/(export)([[:space:]].*=)/\1\U\2/' > /shared/.env
-            rsync -a /root/.aws/ /aws-out/ 2>/dev/null || true
         volumeMounts:
         - name: env
           mountPath: /shared
       containers:
-      - name: mysite
-        image: ghcr.io/anthony-bible/mysite-%{PHASE}@sha256:%{MAIN_IMAGE_SHA}
+      - name: mainsite
+        image: ghcr.io/anthony-bible/mysite@sha256:%{MAIN_IMAGE_SHA}
         imagePullPolicy: IfNotPresent
         command: ["sh", "-c", "cp /shared/.env /var/www/html/.env 2>/dev/null || true; apache2-foreground"]
         ports:
@@ -98,14 +94,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysite-%{PHASE}-service
+  name: mainsite-service
   namespace: default
   annotations:
-    # external-dns.alpha.kubernetes.io/hostname: abible.dev  # TODO: set hostname
+    # external-dns.alpha.kubernetes.io/hostname: anthony.bible  # TODO: set hostname
 spec:
   selector:
-    app: mysite
-    phase: "%{PHASE}"
+    app: mainsite
   ports:
     - name: http
       port: 80
