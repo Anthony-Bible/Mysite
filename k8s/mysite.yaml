@@ -33,6 +33,7 @@ spec:
               topologyKey: kubernetes.io/hostname
       initContainers:
       # Pull /mysite/* parameters from AWS SSM into /shared/.env
+      # (awscli + rsync are baked into the image, no runtime install)
       - name: setup
         image: ghcr.io/anthony-bible/mysite@sha256:%{MAIN_IMAGE_SHA}
         command:
@@ -40,8 +41,6 @@ spec:
           - -c
           - |
             set -eu
-            apt-get update && apt-get install -y --no-install-recommends awscli rsync || \
-              (apk add --no-cache aws-cli rsync 2>/dev/null || true)
             aws configure set default.region us-west-2
             aws ssm get-parameters-by-path \
               --path /mysite/ --recursive --with-decryption \
@@ -49,6 +48,13 @@ spec:
               --query "Parameters[].[Name,Value]" \
               | sed -E 's#/mysite/([^[:space:]]*)[[:space:]](.*)#export \1="\2"#' \
               | sed -E 's/(export)([[:space:]].*=)/\1\U\2/' > /shared/.env
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "10m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
         volumeMounts:
         - name: env
           mountPath: /shared
