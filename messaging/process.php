@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 	
 	//Set timezone
 	date_default_timezone_set('America/New_York');
-	$time = date('h:i:s a',time());
+	$time = date('H:i:s',time());
 	
 	//Validate input
 	if(!isset($user) || $user == '' || !isset($message) || $message == ''){
