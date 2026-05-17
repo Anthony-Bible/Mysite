@@ -63,6 +63,9 @@ spec:
         image: ghcr.io/anthony-bible/mysite@sha256:%{MAIN_IMAGE_SHA}
         imagePullPolicy: IfNotPresent
         command: ["sh", "-c", "cp /shared/.env /var/www/html/.env 2>/dev/null || true; apache2-foreground"]
+        envFrom:
+        - secretRef:
+            name: test-secret
         ports:
         - containerPort: 80
           name: http
