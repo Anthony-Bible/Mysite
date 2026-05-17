@@ -47,14 +47,6 @@
 </head>
 
 <body id="page-top" class="index">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=1565020663794074&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
  <!-- jQuery -->
 
  <div class="alert alert-warning alert-dismissible alert-checkout show" role="alert">
@@ -308,7 +300,6 @@
             </div>
         </div>
     </section>
-    <!-- <a id="back-to-top" href="" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><div class="fb-like" data-href="https://www.facebook.com/BibleAnthony1" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div></a> -->
 
    
 
@@ -325,18 +316,7 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                           
-                                <a href="https://facebook.com/bibleanthony1" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://twitter.com/_anthonybible" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item">
                                 <a href="https://www.linkedin.com/in/anthonybible/" class="btn-social btn-outline"><span class="sr-only">LinkedIn</span><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://www.snapchat.com/add/antonbible8"  class="btn-social btn-outline"><span class="sr-only">SnapChat</span><i class=" fa fa-fw fa-snapchat"></i></a>
-
                             </li>
                             <li class="list-inline-item">
                             	<a href="https://github.com/Anthony-Bible" class="btn-social btn-outline"><span class="sr-only">GitHub</span><i class="fa fa-fw fa-github"></i> </a>
