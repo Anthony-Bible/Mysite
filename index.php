@@ -111,7 +111,7 @@
                         </div>
                         <h3 class="text-center">Cloud-Native Platforms</h3>
                     </a>
-                    <p class="text-center">Managing 15+ High Availability clusters (>150 nodes) with 99.999% uptime targets. Specialized in K3s, SaltStack, and AWS infrastructure.</p>
+                    <p class="text-center">Operate 7 global GKE clusters running 300+ microservices that carry billions of calls a year. ArgoCD Rollouts and GitOps on delivery, Linkerd for mTLS between services.</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="https://github.com/anthony-bible" class="portfolio-link">
@@ -125,7 +125,7 @@
                         </div>
                         <h3 class="text-center">Infrastructure as Code</h3>
                     </a>
-                    <p class="text-center">Automating complex deployments using Terraform, Salt, and Jenkins to support millions of monthly active users.</p>
+                    <p class="text-center">Ship platform tooling in Go and Ansible: a JSON-declarative service tool teammates use to spin up services, JIT production access that replaced standing privileges, and an agentic RCA assistant SREs adopted org-wide.</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModalSec" class="portfolio-link" data-bs-toggle="modal">
@@ -139,7 +139,7 @@
                         </div>
                         <h3 class="text-center">Security & Compliance</h3>
                     </a>
-                    <p class="text-center">Achieved PCI-DSS compliance and USPS Sensitive Security clearance. Expert in ELK stack for observability and auditing.</p>
+                    <p class="text-center">Hold PCI-DSS, HIPAA, and SOC 2 controls across the platform: Kubernetes RBAC, secrets rotation, supply-chain scanning, and audit logging.</p>
                 </div>
             </div>
         </div>
@@ -231,10 +231,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 offset-lg-2">
-                    <p>I am a Site Reliability Engineer and Platform Engineer dedicated to building high-availability infrastructure that scales to millions of users. My experience includes managing 15+ HA clusters across 150+ nodes, consistently maintaining "five nines" (99.999%) uptime in mission-critical environments. I specialize in bridging the gap between development and operations through robust automation and GitOps workflows.</p>
+                    <p>I'm a Site Reliability and Platform Engineer with 7+ years on production Kubernetes. At TCN I run the deployment surface for 300+ microservices across seven global GKE clusters that carry billions of calls a year, with ArgoCD Rollouts and GitOps on delivery. I spend most of my time building the tools other engineers design against: a JSON-declarative service tool in Go, a JIT production-access system that replaced standing privileges, and an agentic root-cause assistant wired into the alert pipeline that SREs adopted across the org within a few months.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>My professional background is rooted in security and compliance, having successfully achieved organization-wide PCI-DSS compliance and obtained USPS Sensitive Security clearance. I am proficient in modern infrastructure tools including SaltStack, Terraform, Jenkins, and the ELK stack. I am passionate about infrastructure as code and leveraging cloud-native technologies like Kubernetes and Traefik to solve complex scale challenges.</p>
+                    <p>Lately the work has bent toward agentic tooling: shipping LLM-backed assistants that take real on-call load, and treating prompts, evals, and tool-use scaffolding with the same rigor as any other production system. The rest of my day spans observability with Prometheus, Grafana, and OpenTelemetry; Linkerd mTLS between services; PostgreSQL fleets at hundreds of terabytes; and PCI-DSS, HIPAA, and SOC 2 controls across the platform.</p>
                 </div>
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <a href="downloads/resume.pdf" class="btn btn-lg btn-outline">
@@ -367,16 +367,16 @@
                             <h2>Security & Compliance</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/amh.jpg" class="img-fluid img-centered" alt="">
-                            <p>I have extensive experience in securing critical infrastructure and ensuring regulatory compliance. My achievements include leading an organization to full PCI-DSS compliance and obtaining a USPS Sensitive Security clearance. I leverage tools like the ELK stack for comprehensive auditing, observability, and threat detection, ensuring that security is baked into the platform from the ground up.</p>
+                            <p>I hold PCI-DSS, HIPAA, and SOC 2 controls across the TCN platform. The work covers Kubernetes RBAC, secrets rotation, supply-chain and container scanning in CI, and audit logging across 300+ services. The JIT production-access system I built replaced standing prod privileges and gives the org an auditable trail for SOC 2 review.</p>
                             <ul class="list-inline item-details">
                                 <li class="list-inline-item">Focus:
-                                    <strong>Compliance & Auditing</strong>
-                                </li>
-                                <li class="list-inline-item">Clearance:
-                                    <strong>USPS Sensitive</strong>
+                                    <strong>Platform Security</strong>
                                 </li>
                                 <li class="list-inline-item">Standards:
-                                    <strong>PCI-DSS</strong>
+                                    <strong>PCI-DSS, HIPAA, SOC 2</strong>
+                                </li>
+                                <li class="list-inline-item">Tooling:
+                                    <strong>K8s RBAC, JIT Access</strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Close</button>
