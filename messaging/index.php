@@ -1,8 +1,7 @@
 <?php include 'database.php' ; ?>
 <?php
 	//Create Select Query
-	$query = "SELECT * FROM shouts ORDER BY id DESC";
-	$shouts = mysqli_query($con, $query);
+	$shouts = $con ? mysqli_query($con, "SELECT * FROM shouts ORDER BY id DESC") : false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,7 @@
 			</header>
 			<div id="shouts">
 				<ul>
-					<?php while($row = mysqli_fetch_assoc($shouts)) : ?>
+					<?php while($shouts && ($row = mysqli_fetch_assoc($shouts))) : ?>
 						<li class="shout"><span><?php echo $row['time'] ?> - </span><strong><?php echo $row['user'] ?>:</strong> <?php echo $row['message'] ?> </li>
 					<?php endwhile; ?>				
 				</ul>

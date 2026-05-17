@@ -2,7 +2,7 @@ FROM php:8.4-apache
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends git unzip libzip-dev awscli rsync \
-    && docker-php-ext-install zip \
+    && docker-php-ext-install zip mysqli \
     && a2enmod headers rewrite \
     && rm -rf /var/lib/apt/lists/*
 
