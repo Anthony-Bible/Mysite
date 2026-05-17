@@ -282,10 +282,8 @@ graph LR
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="https://facebook.com/bibleanthony1" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/_anthonybible" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/anthonybible/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="https://github.com/Anthony-Bible" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/anthonybible/" class="btn-social btn-outline"><span class="sr-only">LinkedIn</span><i class="fa fa-fw fa-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/Anthony-Bible" class="btn-social btn-outline"><span class="sr-only">GitHub</span><i class="fa fa-fw fa-github"></i></a></li>
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
