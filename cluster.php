@@ -185,7 +185,7 @@ graph LR
     PwxDev -->|HTTP| EncDev[encryption-dev]
     PwxDev -->|HTTP| EmailDev[email-dev]
     PwxDev -.->|intercept| TM[ambassador<br/>traffic-manager]
-    EmailProd -.->|SMTP egress| Ext((SendGrid))
+    EmailProd -.->|SMTP egress| Ext((AWS SES))
     EmailDev -.->|SMTP egress| Ext
     DbProd -.->|via cloudsql-proxy| CSQL[(Cloud SQL)]
     DbDev -.->|via cloudsql-proxy| CSQL
