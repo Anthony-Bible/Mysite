@@ -17,7 +17,7 @@
 									<textarea id="body" rows="10" cols="80" class="form-control" name="body"></textarea>
 									<script>CKEDITOR.replace('body');</script>
 								</div>
-							<button name="do_create" type="submit" class="btn btn-default">Submit</button>
+							<button name="do_create" type="submit" class="btn btn-secondary">Submit</button>
 						</form>
 					</div>
 				</div>
@@ -35,6 +35,6 @@
 							<label>Password</label>
 							<input name="password" type="password" class="form-control" placeholder="Enter Password">
 						</div>			
-						<button name="do_login" type="submit" class="btn btn-primary">Login</button> <a  class="btn btn-default" href="register.html"> Create Account</a>
+						<button name="do_login" type="submit" class="btn btn-primary">Login</button> <a  class="btn btn-secondary" href="register.html"> Create Account</a>
 					</form>
 <?php include('includes/footer.php'); ?>	
