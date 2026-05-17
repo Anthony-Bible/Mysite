@@ -69,7 +69,7 @@
                     <li class="nav-item page-scroll"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item page-scroll"><a class="nav-link" href="#contact">Contact</a></li>
                     <li class="nav-item page-scroll"><a class="nav-link" href="https://www.abible.dev">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/homelab.php">Homelab</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cluster.php">Cluster</a></li>
                 </ul>
             </div>
         </div>
@@ -100,7 +100,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="/homelab.php" class="portfolio-link">
+                    <a href="/cluster.php" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
