@@ -5,6 +5,9 @@ require('core/init.php');
 $topic = new Topic;
 
 //Get ID From URL
+if(!isset($_GET['id'])){
+	redirect('index.php');
+}
 $topic_id = $_GET['id'];
 
 //Process Reply
