@@ -1,0 +1,36 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://anthony.bible/contactform/contact.php",
+      "service-doc": [
+        {
+          "href": "https://anthony.bible/",
+          "type": "text/html",
+          "title": "Contact form — POST name, email, phone, message"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://anthony.bible/.well-known/agent-skills/index.json",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://anthony.bible/",
+      "alternate": [
+        {
+          "href": "https://anthony.bible/",
+          "type": "text/markdown",
+          "title": "Markdown rendering of the homepage (request with Accept: text/markdown)"
+        }
+      ],
+      "sitemap": [
+        {
+          "href": "https://anthony.bible/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    }
+  ]
+}

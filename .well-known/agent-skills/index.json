@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/skills-index.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "anthony-bible-site-overview",
+      "type": "skill",
+      "description": "Overview of anthony.bible — sections, subprojects, and useful URLs for agents.",
+      "url": "https://anthony.bible/.well-known/agent-skills/site-overview/SKILL.md",
+      "sha256": "f949d589f93c26cde9c275443458b5dda7882b7b6c46cf56332be82ace6452f7"
+    },
+    {
+      "name": "contact-anthony-bible",
+      "type": "skill",
+      "description": "Send Anthony Bible a message through the contact form on anthony.bible.",
+      "url": "https://anthony.bible/.well-known/agent-skills/contact/SKILL.md",
+      "sha256": "2034d5b76c86422a821f076399e91915c1182ed115176b5153d4e7694050e807"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/_agents/markdown.php'; agents_serve_markdown('cluster.md'); ?>
 <!DOCTYPE html>
 <html lang="en">
 

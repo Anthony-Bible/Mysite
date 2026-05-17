@@ -1,3 +1,22 @@
 <filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
 Header set Cache-Control "max-age=2592000, public"
 </filesMatch>
+
+# RFC 8288 Link headers for agent discovery on the homepage
+<If "%{REQUEST_URI} == '/' || %{REQUEST_URI} == '/index.php'">
+    Header append Link "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
+    Header append Link "</.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\""
+    Header append Link "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    Header append Link "</>; rel=\"alternate\"; type=\"text/markdown\""
+</If>
+
+# Correct content types for well-known files
+<Files "robots.txt">
+    Header set Content-Type "text/plain; charset=utf-8"
+</Files>
+<Files "sitemap.xml">
+    Header set Content-Type "application/xml; charset=utf-8"
+</Files>
+# /.well-known/api-catalog has no extension; tag via env and set type.
+SetEnvIf Request_URI "^/\.well-known/api-catalog$" IS_API_CATALOG=1
+Header set Content-Type "application/linkset+json; charset=utf-8" env=IS_API_CATALOG
