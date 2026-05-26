@@ -2,6 +2,8 @@
 Header set Cache-Control "max-age=2592000, public"
 </filesMatch>
 
+ErrorDocument 404 /404.php
+
 # RFC 8288 Link headers for agent discovery on the homepage
 <If "%{REQUEST_URI} == '/' || %{REQUEST_URI} == '/index.php'">
     Header append Link "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
